@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet} from "react-native";
-import colors from "../../colors";
+import colors from '../../colors';
 const styles = StyleSheet.create({
     container:{flex:1,backgroundColor:colors.primaryBackgroundColor},
     image:{width: 24, height: 24, marginVertical: 10, marginHorizontal: 12, tintColor: colors.primaryTintColor},
