@@ -1,10 +1,10 @@
 import React from 'react';
-import {Text, SafeAreaView} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import colors from './colors';
 import Accounts from './Screens/Accounts';
 import Cash from './Screens/Cash';
+import Settings from './Screens/Settings';
 const Stack = createStackNavigator();
 
 function Home() {
@@ -35,6 +35,19 @@ function Home() {
               borderBottomWidth: 0,
             },
             headerTintColor: colors.primaryTintColor,
+          }}
+        />
+        <Stack.Screen
+          name="Settings"
+          component={Settings}
+          options={{
+            headerStyle: {
+              backgroundColor: colors.primaryTintColor,
+              elevation: 0,
+              shadowOpacity: 0,
+              borderBottomWidth: 0,
+            },
+            headerTintColor: colors.black,
           }}
         />
       </Stack.Navigator>

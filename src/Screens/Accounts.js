@@ -16,7 +16,13 @@ function Accounts({navigation}) {
     navigation.setOptions({
       headerRight: () => <HeaderRight />,
       headerLeft: () => (
-        <Image source={require('../icons/settings.png')} style={styles.image} />
+        <TouchableWithoutFeedback
+          onPress={() => navigation.navigate('Settings')}>
+          <Image
+            source={require('../icons/settings.png')}
+            style={styles.image}
+          />
+        </TouchableWithoutFeedback>
       ),
     });
   }, [navigation]);
