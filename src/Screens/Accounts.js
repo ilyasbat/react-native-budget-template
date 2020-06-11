@@ -10,11 +10,11 @@ import styles from '../stylesheets/Screens/Accounts';
 import colors from '../colors';
 import MenuTab from '../Components/MenuTab';
 import BalanceView from '../Components/BalanceView';
-import HeaderRight from '../Components/HeaderRight';
+import IndexCashHeaderRight from '../Components/Headers/IndexCashHeaderRight';
 function Accounts({navigation}) {
   useEffect(() => {
     navigation.setOptions({
-      headerRight: () => <HeaderRight />,
+      headerRight: () => <IndexCashHeaderRight />,
       headerLeft: () => (
         <TouchableWithoutFeedback
           onPress={() => navigation.navigate('Settings')}>

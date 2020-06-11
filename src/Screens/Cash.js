@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react';
-import {View, Text, FlatList, Image} from 'react-native';
+import {View, Text, FlatList, Image, TouchableOpacity} from 'react-native';
 import styles from '../stylesheets/Screens/Cash';
 import colors from '../colors';
 import MenuTab from '../Components/MenuTab';
 import BalanceView from '../Components/BalanceView';
-import HeaderRight from '../Components/HeaderRight';
+import IndexCashHeaderRight from '../Components/Headers/IndexCashHeaderRight';
 function Accounts({navigation}) {
   useEffect(() => {
     navigation.setOptions({
-      headerRight: () => <HeaderRight />,
+      headerRight: () => <IndexCashHeaderRight navigation={navigation} />,
     });
   }, [navigation]);
   const data = [
@@ -82,24 +82,27 @@ function Accounts({navigation}) {
           marginTop: 32,
           marginBottom: 8,
         }}>
-        <View
-          style={{
-            minWidth: 101,
-            backgroundColor: 'rgba(255,255,255,.2)',
-            alignItems: 'center',
-            borderRadius: 8,
-            paddingVertical: 10,
-            paddingHorizontal: 16,
-          }}>
-          <Text
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Add', {title: 'Income'})}>
+          <View
             style={{
-              color: colors.primaryTintColor,
-              opacity: 0.8,
-              fontSize: 21,
+              minWidth: 101,
+              backgroundColor: 'rgba(255,255,255,.2)',
+              alignItems: 'center',
+              borderRadius: 8,
+              paddingVertical: 10,
+              paddingHorizontal: 16,
             }}>
-            Add New
-          </Text>
-        </View>
+            <Text
+              style={{
+                color: colors.primaryTintColor,
+                opacity: 0.8,
+                fontSize: 21,
+              }}>
+              Add New
+            </Text>
+          </View>
+        </TouchableOpacity>
       </View>
       <FlatList
         style={styles.flatlist}

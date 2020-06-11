@@ -5,6 +5,7 @@ import colors from './colors';
 import Accounts from './Screens/Accounts';
 import Cash from './Screens/Cash';
 import Settings from './Screens/Settings';
+import Add from './Screens/Add';
 const Stack = createStackNavigator();
 
 function Home() {
@@ -40,6 +41,19 @@ function Home() {
         <Stack.Screen
           name="Settings"
           component={Settings}
+          options={{
+            headerStyle: {
+              backgroundColor: colors.primaryTintColor,
+              elevation: 0,
+              shadowOpacity: 0,
+              borderBottomWidth: 0,
+            },
+            headerTintColor: colors.black,
+          }}
+        />
+        <Stack.Screen
+          name="Add"
+          component={Add}
           options={{
             headerStyle: {
               backgroundColor: colors.primaryTintColor,

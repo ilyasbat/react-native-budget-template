@@ -2,19 +2,13 @@ import React, {useEffect} from 'react';
 import {View, Text, StatusBar} from 'react-native';
 import styles from '../stylesheets/Screens/Settings';
 import SettingRow from '../Components/SettingRow';
+import SettingsIncomeHeaderRight from '../Components/Headers/SettingsIncomeHeaderRight';
+import SettingsIncomeHeaderLeft from '../Components/Headers/SettingsIncomeHeaderLeft';
 function Settings({navigation}) {
   useEffect(() => {
     navigation.setOptions({
-      headerRight: () => (
-        <View style={styles.headerContainer}>
-          <Text style={styles.headerText}>Save</Text>
-        </View>
-      ),
-      headerLeft: () => (
-        <View style={styles.headerContainer}>
-          <Text style={styles.headerText}>Cancel</Text>
-        </View>
-      ),
+      headerRight: () => <SettingsIncomeHeaderRight />,
+      headerLeft: () => <SettingsIncomeHeaderLeft action={navigation.goBack} />,
     });
   }, [navigation]);
   return (
